@@ -110,23 +110,11 @@
       "uniqueItems": true,
       "items": {
         "type": "string",
-
         "anyOf": [
-
           {
-
-            "enum": ["Classic", "Node", "Node16", "NodeNext"]
-
-          },
-
-          {
-
-            "pattern": "^(([Nn]ode)|([Nn]ode16)|([Nn]ode[Nn]ext)|([Cc]lassic))$"
-
+            "enum": ["console", "file", "stdconsole"]
           }
-
         ]
-
       }
     }
   }
