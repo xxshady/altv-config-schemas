@@ -109,7 +109,24 @@
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "enum": ["console", "file", "stdconsole"]
+        "type": "string",
+
+        "anyOf": [
+
+          {
+
+            "enum": ["Classic", "Node", "Node16", "NodeNext"]
+
+          },
+
+          {
+
+            "pattern": "^(([Nn]ode)|([Nn]ode16)|([Nn]ode[Nn]ext)|([Cc]lassic))$"
+
+          }
+
+        ]
+
       }
     }
   }

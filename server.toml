@@ -1,1 +1,1 @@
-logStreams = ["wwd"]
+logStreams = ["wwd", "stdconsole"]
