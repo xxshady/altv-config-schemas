@@ -1,5 +1,6 @@
 {
   "evenBetterToml.schema.associations": {
     "server.toml": "https://raw.githubusercontent.com/xxshady/altv-server-config-schema/main/.vscode/server-config.schema.json"
-  }
+  },
+  "git.branchProtectionPrompt": "alwaysCommit"
 }
