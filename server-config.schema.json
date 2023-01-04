@@ -73,7 +73,7 @@
       "description": "The delay that is used when the announceRetryErrorAttempts are reached (in ms)",
       "type": "integer"
     },
-    "announceRetryErrorAttempts ": {
+    "announceRetryErrorAttempts": {
       "description": "Max retries until announceRetryErrorDelay will be used",
       "type": "integer"
     },
@@ -137,7 +137,7 @@
       "type": "boolean",
       "default": false
     },
-    "earlyAuthUrl ": {
+    "earlyAuthUrl": {
       "description": "The url for the early auth login page (only used when useEarlyAuth is true)",
       "type": "string",
       "default": "https://example.com/login"
@@ -247,12 +247,12 @@
       "description": "Voice-chat configuration (needs to be set to enable voice chat)",
       "type": "object",
       "properties": {
-        "bitrate ": {
+        "bitrate": {
           "description": "The bitrate of the voice server",
           "type": "integer",
           "default": 64000
         },
-        "externalPort ": {
+        "externalPort": {
           "description": "The external host port",
           "type": "integer",
           "default": 7798
@@ -267,7 +267,7 @@
           "type": "string",
           "default": "xx.xx.xx.xx"
         },
-        "externalPublicPort ": {
+        "externalPublicPort": {
           "description": "The external host public port",
           "type": "integer",
           "default": 7799
