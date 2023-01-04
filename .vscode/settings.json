@@ -1,5 +1,5 @@
 {
   "evenBetterToml.schema.associations": {
-    "server.toml": "https://raw.githubusercontent.com/xxshady/altv-server-config-schema/main/.vscode/server-config.schema.json"
+    "server.toml": "https://raw.githubusercontent.com/xxshady/altv-config-schemas/main/server-config.schema.json"
   },
 }
