@@ -1,11 +1,5 @@
 {
-  "json.schemas": [
-    {
-      "fileMatch": ["*.test.json"],
-      "url": "file:///C:/dev/vscode-json-scheme/.vscode/user.schema.json"
-    }
-  ],
   "evenBetterToml.schema.associations": {
-    "server.toml": "file:///C:/dev/vscode-json-scheme/.vscode/server-config.schema.json"
+    "server.toml": "https://raw.githubusercontent.com/xxshady/altv-server-config-schema/main/.vscode/server-config.schema.json"
   }
 }

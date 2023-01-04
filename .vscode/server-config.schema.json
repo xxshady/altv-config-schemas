@@ -103,6 +103,14 @@
     "colShapeTickRate": {
       "description": "Defines the rate (miliseconds) in which colshape calculations should occur (dev/13.0-dev32 and higher)",
       "type": "integer"
+    },
+    "logStreams": {
+      "description": "Defines the used logging streams (console, file, stdconsole) for the server (dev/13.0-dev32 and higher)",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
     }
   }
 }
