@@ -150,7 +150,7 @@
     "cdnUrl": {
       "description": "The url for the CDN page (only used when useCdn is true)",
       "type": "string",
-      "pattern": "(http|https)?:\\/\\/(\\S+)",
+      "pattern": "(http|https):\\/\\/(\\S+)",
       "default": "https://cdn.example.com"
     },
     "sendPlayerNames": {
