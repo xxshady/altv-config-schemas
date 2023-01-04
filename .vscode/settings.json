@@ -1,0 +1,11 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": ["*.test.json"],
+      "url": "file:///C:/dev/vscode-json-scheme/.vscode/user.schema.json"
+    }
+  ],
+  "evenBetterToml.schema.associations": {
+    "server.toml": "file:///C:/dev/vscode-json-scheme/.vscode/server-config.schema.json"
+  }
+}
