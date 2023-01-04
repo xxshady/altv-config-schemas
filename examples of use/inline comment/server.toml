@@ -1,0 +1,6 @@
+#:schema https://raw.githubusercontent.com/xxshady/altv-config-schemas/main/server-config.schema.json
+
+announce = false
+name = "My server name"
+
+logStreams = ["consolex"] # error in vscode "consolex is not valid"
