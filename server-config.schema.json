@@ -1,0 +1,276 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "https://raw.githubusercontent.com/xxshady/altv-config-schemas/main/server.schema.json",
+  "title": "alt:V server.toml schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "Name of the server",
+      "type": "string",
+      "default": "My server name"
+    },
+    "host": {
+      "description": "The binding address of your server",
+      "type": "string",
+      "default": "0.0.0.0"
+    },
+    "port": {
+      "description": "Port of the server",
+      "type": "number",
+      "default": 7788
+    },
+    "players": {
+      "description": "The amount of players that can play on your server concurrently",
+      "type": "number",
+      "default": 100
+    },
+    "password": {
+      "description": "The password required to join your server",
+      "type": "string"
+    },
+    "announce": {
+      "description": "If the server should be visible on the masterlist in the alt:V client",
+      "type": "boolean"
+    },
+    "token": {
+      "description": "Token to announce the server to the masterlist (not needed for development or direct connect)",
+      "type": "boolean"
+    },
+    "gamemode": {
+      "description": "The gamemode your server is running",
+      "type": "string"
+    },
+    "website": {
+      "description": "The website of your server",
+      "type": "string"
+    },
+    "language": {
+      "description": "The language of your server",
+      "type": "string"
+    },
+    "description": {
+      "description": "The description of your server",
+      "type": "string"
+    },
+    "debug": {
+      "description": "If the debug mode should be allowed (Debug mode allows debugging functions like reconnect or the CEF debugger)",
+      "type": "boolean",
+      "default": false
+    },
+    "streamingDistance": {
+      "description": "The stream in distance for entities (players, vehicles)",
+      "type": "number"
+    },
+    "migrationDistance": {
+      "description": "The network owner migration distance for entities (vehicles)",
+      "type": "number"
+    },
+    "timeout": {
+      "description": "The timeout multiplier (must be >= 1)",
+      "type": "number"
+    },
+    "announceRetryErrorDelay": {
+      "description": "The delay that is used when the announceRetryErrorAttempts are reached (in ms)",
+      "type": "integer"
+    },
+    "announceRetryErrorAttempts ": {
+      "description": "Max retries until announceRetryErrorDelay will be used",
+      "type": "integer"
+    },
+    "duplicatePlayers": {
+      "description": "Max players which can connect with the same ip address",
+      "type": "integer"
+    },
+    "mapBoundsMinX": {
+      "description": "The map bound size (value is considered negative)",
+      "type": "number"
+    },
+    "mapBoundsMinY": {
+      "description": "The map bound size (value is considered negative)",
+      "type": "number"
+    },
+    "mapBoundsMaxX": {
+      "description": "The map bound size (value is considered positive)",
+      "type": "number"
+    },
+    "mapBoundsMaxY": {
+      "description": "The map bound size (value is considered positive)",
+      "type": "number"
+    },
+    "mapCellAreaSize": {
+      "description": "smaller areas uses more ram and less cpu",
+      "type": "integer"
+    },
+    "colShapeTickRate": {
+      "description": "Defines the rate (milliseconds) in which colshape calculations should occur",
+      "type": "integer"
+    },
+    "logStreams": {
+      "description": "Defines the used logging streams (console, file, stdconsole) for the server",
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "anyOf":[
+          { "enum": ["console", "file", "stdconsole"] }
+        ],
+        "pattern": "console|file|stdconsole"
+      }
+    },
+    "entityWorkerCount": {
+      "description": "Defines the amount of worker threads for entity computation, like colshapes, streaming, etc. Good value is cpu count * 2",
+      "type": "integer"
+    },
+    "tags": {
+      "description": "The tags for your server (max. 4)",
+      "type": "array",
+      "maxItems": 4
+    },
+    "connectionQueue": {
+      "description": "Should connection queue be enabled for your server. ConnectionQueueAdd & ConnectionQueueRemove serverside events are required to accept or decline connections",
+      "type": "boolean",
+      "default": false
+    },
+    "useEarlyAuth": {
+      "description": "Should early auth be used for your server",
+      "type": "boolean",
+      "default": false
+    },
+    "earlyAuthUrl ": {
+      "description": "The url for the early auth login page (only used when useEarlyAuth is true). Example: \"https://example.com/login\"",
+      "type": "string"
+    },
+    "useCdn": {
+      "description": "Should a CDN be used for your server",
+      "type": "boolean",
+      "default": false
+    },
+    "cdnUrl": {
+      "description": "The url for the CDN page (only used when useCdn is true). Example: \"https://cdn.example.com\"",
+      "type": "string",
+      "pattern": "(http|https)?:\\/\\/(\\S+)"
+    },
+    "sendPlayerNames": {
+      "description": "Should alt:V server send all clients player name on connect",
+      "type": "boolean",
+      "default": true
+    },
+    "resources": {
+      "description": "An array of all resources that should be loaded",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "modules": {
+      "description": "An array of all modules that should be loaded",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "worldProfiler": {
+      "description": "Profiling entity creation, systems like streaming etc.",
+      "type": "object",
+      "properties": {
+        "port": {
+          "type": "integer",
+          "default": 7797
+        },
+        "host": {
+          "type": "string",
+          "default": "0.0.0.0"
+        }
+      }
+    },
+    "js-module": {
+      "description": "Settings of JS module",
+      "type": "object",
+      "properties": {
+        "source-maps": {
+          "description": "https://nodejs.org/api/cli.html#--enable-source-maps",
+          "type": "boolean",
+          "default": false
+        },
+        "heap-profiler": {
+          "description": "https://nodejs.org/api/cli.html#--heap-prof",
+          "type": "boolean",
+          "default": false
+        },
+        "profiler": {
+          "description": "Enable profiler",
+          "type": "boolean",
+          "default": false
+        },
+        "global-fetch": {
+          "description": "https://nodejs.org/api/cli.html#--experimental-fetch",
+          "type": "boolean",
+          "default": false
+        },
+        "global-webcrypto": {
+          "description": "https://nodejs.org/api/cli.html#--experimental-global-webcrypto",
+          "type": "boolean",
+          "default": false
+        },
+        "network-imports": {
+          "description": "https://nodejs.org/api/cli.html#--experimental-network-imports",
+          "type": "boolean",
+          "default": false
+        },
+        "extra-cli-args": {
+          "description": "Add extra cli arguments to the node environment (See https://nodejs.org/api/cli.html for more info)",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "inspector": {
+          "description": "Enable node.js inspector",
+          "type": "object",
+          "properties": {
+            "port": {
+              "type": "integer",
+              "default": 9229
+            },
+            "host": {
+              "type": "string",
+              "default": "127.0.0.1"
+            }
+          }
+        }
+      }
+    },
+    "voice": {
+      "description": "Voice-chat configuration (needs to be set to enable voice chat)",
+      "type": "object",
+      "properties": {
+        "bitrate ": {
+          "description": "The bitrate of the voice server",
+          "type": "integer",
+          "default": 64000
+        },
+        "externalPort ": {
+          "description": "The external host port",
+          "type": "integer",
+          "default": 7798
+        },
+        "externalHost": {
+          "description": "The external host address (leave 127.0.0.1, if voice-server is on same machine)",
+          "type": "string",
+          "default": "127.0.0.1"
+        },
+        "externalPublicHost": {
+          "description": "The external host public address (should be the ip address of your server, not localhost!)",
+          "type": "string",
+          "default": "xx.xx.xx.xx"
+        },
+        "externalPublicPort ": {
+          "description": "The external host public port",
+          "type": "integer",
+          "default": 7799
+        }
+      }
+    }
+  }
+}
