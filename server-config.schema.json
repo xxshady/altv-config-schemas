@@ -34,7 +34,8 @@
     },
     "token": {
       "description": "Token to announce the server to the masterlist (not needed for development or direct connect)",
-      "type": "boolean"
+      "type": "string",
+      "default": ""
     },
     "gamemode": {
       "description": "The gamemode your server is running",
