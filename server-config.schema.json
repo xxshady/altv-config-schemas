@@ -26,11 +26,13 @@
     },
     "password": {
       "description": "The password required to join your server",
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "announce": {
       "description": "If the server should be visible on the masterlist in the alt:V client",
-      "type": "boolean"
+      "type": "boolean",
+      "default": true
     },
     "token": {
       "description": "Token to announce the server to the masterlist (not needed for development or direct connect)",
@@ -39,19 +41,23 @@
     },
     "gamemode": {
       "description": "The gamemode your server is running",
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "website": {
       "description": "The website of your server",
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "language": {
       "description": "The language of your server",
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "description": {
       "description": "The description of your server",
-      "type": "string"
+      "type": "string",
+      "default": ""
     },
     "debug": {
       "description": "If the debug mode should be allowed (Debug mode allows debugging functions like reconnect or the CEF debugger)",
@@ -60,19 +66,23 @@
     },
     "streamingDistance": {
       "description": "The stream in distance for entities (players, vehicles)",
-      "type": "number"
+      "type": "number",
+      "default": 300
     },
     "migrationDistance": {
       "description": "The network owner migration distance for entities (vehicles)",
-      "type": "number"
+      "type": "number",
+      "default": 150
     },
     "timeout": {
       "description": "The timeout multiplier (must be >= 1)",
-      "type": "number"
+      "type": "number",
+      "default": 1
     },
     "announceRetryErrorDelay": {
       "description": "The delay that is used when the announceRetryErrorAttempts are reached (in ms)",
-      "type": "integer"
+      "type": "integer",
+      "default": 2000
     },
     "announceRetryErrorAttempts": {
       "description": "Max retries until announceRetryErrorDelay will be used",
@@ -126,17 +136,18 @@
     "tags": {
       "description": "The tags for your server (max. 4)",
       "type": "array",
-      "maxItems": 4
+      "maxItems": 4,
+      "default": []
     },
     "connectionQueue": {
       "description": "Should connection queue be enabled for your server. ConnectionQueueAdd & ConnectionQueueRemove serverside events are required to accept or decline connections",
       "type": "boolean",
-      "default": false
+      "default": true
     },
     "useEarlyAuth": {
       "description": "Should early auth be used for your server",
       "type": "boolean",
-      "default": false
+      "default": true
     },
     "earlyAuthUrl": {
       "description": "The url for the early auth login page (only used when useEarlyAuth is true)",
@@ -146,7 +157,7 @@
     "useCdn": {
       "description": "Should a CDN be used for your server",
       "type": "boolean",
-      "default": false
+      "default": true
     },
     "cdnUrl": {
       "description": "The url for the CDN page (only used when useCdn is true)",
@@ -277,7 +288,8 @@
     },
     "spawnAfterConnect": {
       "description": "Enables automatic spawn of player when connected at 0 0 72 coords",
-      "type": "boolean"
+      "type": "boolean",
+      "default": true
     }
   }
 }
