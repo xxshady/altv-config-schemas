@@ -273,6 +273,10 @@
           "default": 7799
         }
       }
+    },
+    "spawnAfterConnect": {
+      "description": "Enables automatic spawn of player when connected at 0 0 72 coords",
+      "type": "boolean"
     }
   }
 }
